@@ -28,7 +28,7 @@ export class ConsulterPatientComponent implements OnInit {
     this.isSuccess=true;
     setTimeout(() => 
     {
-     this.router.navigate(['/message']);
+     this.router.navigate(['/messageP']);
     },
     1000);
     console.log('test');

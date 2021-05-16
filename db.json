@@ -1,17 +1,10 @@
 {
   "users": [
     {
-      "email": "monimoni@hotmail.fr",
-      "password": "moniaA@2",
-      "country": "United Kingdom",
-      "userName": "moni1",
-      "id": 1
-    },
-    {
       "email": "hibahosniiiii@gmail.com",
       "password": "hiba1A@@",
       "country": "Germany",
-      "userName": "hiba1",
+      "userName": "hiba2",
       "id": 2
     },
     {
@@ -20,20 +13,16 @@
       "country": "Tunisie",
       "userName": "usr12",
       "id": 3
+    },
+    {
+      "email": "serdemo@hotmail.fr",
+      "password": "rihem1@R",
+      "country": "Tunisie",
+      "userName": "rihem123",
+      "id": 4
     }
   ],
   "patients": [
-    {
-      "firstName": "bechir",
-      "lastName": "hamdi",
-      "address": "ariana borj baccouche",
-      "postcode": 2027,
-      "city": "Ariana",
-      "country": "Tunisie",
-      "gender": "Male",
-      "birthday": "21/11/1990",
-      "id": 2
-    },
     {
       "firstName": "monia",
       "lastName": "bejaoui",
@@ -99,17 +88,6 @@
       "city": "ben arous",
       "country": "Tunisie",
       "id": 8
-    },
-    {
-      "firstName": "mohamed",
-      "lastName": "azzouzi",
-      "gender": "Male",
-      "birthday": "24/12/1994",
-      "address": "menzel bourguiba",
-      "city": "bizerte",
-      "country": "Tunisie",
-      "postcode": 2070,
-      "id": 9
     }
   ]
 }

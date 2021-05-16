@@ -7,6 +7,7 @@ import { CreatepatientComponent } from './pages/createPatient/createpatient/crea
 import { DetailPatientComponent } from './pages/detailPatient/detail-patient/detail-patient.component';
 import { LoginComponent } from './pages/login/login/login.component';
 import { MessageComponent } from './pages/message/message.component';
+import { MessageForPComponent } from './pages/message/messageP/message-for-p/message-for-p.component';
 import { RegisterComponent } from './pages/rgisterUser/register/register.component';
 import { UpdateComponent } from './pages/updateUser/update/update.component';
 
@@ -21,7 +22,8 @@ const routes: Routes = [
   {path:'updateUser', component: UpdateComponent},
   {path:'createPatient', component: CreatepatientComponent},
   {path:'consulterPatient',component: ConsulterPatientComponent},
-  {path:'detailPatient', component: DetailPatientComponent}
+  {path:'detailPatient', component: DetailPatientComponent},
+  {path:'messageP', component: MessageForPComponent}
   
   //{ path: 'basic-ui', loadChildren: () => import('./basic-ui/basic-ui.module').then(m => m.BasicUiModule) },
   //{ path: 'charts', loadChildren: () => import('./charts/charts.module').then(m => m.ChartsDemoModule) },
