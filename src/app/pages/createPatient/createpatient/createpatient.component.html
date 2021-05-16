@@ -1,0 +1,149 @@
+<div class="col-12 grid-margin">
+    <div class="card">
+      <div class="card-body">
+        <div>
+   
+            <h1 align="center" class="card-header" style="font-size: large; color:white ; background-color:#B66DFF;" >FeelGood</h1>
+        </div>
+        <br>
+    <div *ngIf="isSuccess" class="alert alert-success" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close" (click)="close()"><span aria-hidden="true">&times;</span></button>
+        <strong>Success!</strong> You have been signed in successfully!
+    </div>
+        <br>
+        <form  #f="ngForm" class="form-sample">
+          <p align="center" class="card-description">
+            <strong> <h1>Create Patient</h1></strong> 
+          </p>
+          <br>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group row">
+                <label class="col-sm-3 col-form-label">First Name</label>
+                <div class="col-sm-9">
+                  <input type="text" class="form-control" id="firstname" name="firstname"  [(ngModel)]="patient.firstName"  #reffisrtName="ngModel"
+                  required maxlength="10" minlength="3"/>
+                </div>
+              </div>
+              <div class="alert alert-danger" *ngIf="reffisrtName.invalid && reffisrtName.touched ">
+                <div *ngIf="reffisrtName.errors.required">First Name is a required field</div>
+                <div *ngIf="reffisrtName.errors.maxlength">maxLendth for first name is 10</div>
+                <div *ngIf="reffisrtName.errors.minlength">minlength for first name is 3</div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Last Name</label>
+                <div class="col-sm-9">
+                  <input type="text" class="form-control" id="lastname" name="lastname"  [(ngModel)]="patient.lastName"  #reflastName="ngModel"
+                  required maxlength="10" minlength="3" />
+                </div>
+              </div>
+              <div class="alert alert-danger" *ngIf="reflastName.invalid && reflastName.touched ">
+                <div *ngIf="reflastName.errors.required">First Name is a required field</div>
+                <div *ngIf="reflastName.errors.maxlength">maxLendth for last name is 10</div>
+                <div *ngIf="reflastName.errors.minlength">minlength for last name is 3</div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Gender</label>
+                <div class="col-sm-9">
+                  <select class="form-control" id="gender" name="gender"  [(ngModel)]="patient.gender"  #refgender="ngModel"  required>
+                    <option>Male</option>
+                    <option>Female</option>
+                  </select>
+                </div>
+              </div>
+              <div class="alert alert-danger" *ngIf="refgender.invalid && refgender.touched ">
+                <div *ngIf="refgender.errors.required">Gender is a required field</div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Date of Birth</label>
+                <div class="col-sm-9">
+                  <input class="form-control" placeholder="dd/mm/yyyy" id="birthday" name="birthday" [(ngModel)]="patient.birthday"  #refbirthday="ngModel"
+                    required pattern="^([0-2][0-9]|(3)[0-1])(\/)(((0)[0-9])|((1)[0-2]))(\/)\d{4}$"/>
+                </div>
+              </div>
+              <div class="alert alert-danger" *ngIf="refbirthday.invalid && refbirthday.touched ">
+                <div *ngIf="refbirthday.errors.required">Birthday is a required field</div>
+                <div *ngIf="reflastName.errors.pattern">This field  should respect a date  format</div>
+              </div>
+            </div>
+          </div>
+          <p class="card-description">
+            Address
+          </p>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Address</label>
+                <div class="col-sm-9">
+                  <input type="text" class="form-control" id="adress" name="adress" [(ngModel)]="patient.address"  #refaddress="ngModel"
+                  required minlength="5"/>
+                </div>
+              </div>
+              <div class="alert alert-danger" *ngIf="refaddress.invalid && refaddress.touched ">
+                <div *ngIf="refaddress.errors.required">Adress is a required field</div>
+                <div *ngIf="reflastName.errors.minlength">minlength for Adress is 5</div>
+              </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group row">
+                  <label class="col-sm-3 col-form-label">Postcode</label>
+                  <div class="col-sm-9">
+                    <input type="number" class="form-control" id="posteCode" name="posteCode" [(ngModel)]="patient.postcode"  #refpostcode="ngModel"
+                    required pattern="^[0-9]{4}$" />
+                  </div>
+                </div>
+                <div class="alert alert-danger" *ngIf="refpostcode.invalid && refpostcode.touched ">
+                    <div *ngIf="refpostcode.errors.required">Postcode is a required field</div>
+                    <div *ngIf="refpostcode.errors.pattern"> Postcode must be a number with length: 4</div>
+                  </div>
+              </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group row">
+                <label class="col-sm-3 col-form-label">City</label>
+                <div class="col-sm-9">
+                  <input type="text" class="form-control" id="city" name="city" [(ngModel)]="patient.city"  #refcity="ngModel" 
+                  required minlength="4" />
+                </div>
+              </div>
+              <div class="alert alert-danger" *ngIf="refcity.invalid && refcity.touched ">
+                <div *ngIf="refcity.errors.required">City is a required field</div>
+                <div *ngIf="refcity.errors.minlength">minlength for City is 4</div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Country</label>
+                <div class="col-sm-9">
+                  <select class="form-control" id="country" name="country" [(ngModel)]="patient.country" #refcountry="ngModel" required>
+                    <option>America</option>
+                    <option>Tunisie</option>
+                    <option>Italy</option>
+                    <option>Russia</option>
+                    <option>Britain</option>
+                  </select>
+                </div>
+              </div>
+              <div class="alert alert-danger" *ngIf="refcountry.invalid && refcountry.touched ">
+                <div *ngIf="refcountry.errors.required">Country is a required field</div>
+              </div>
+            </div>
+          </div>
+         
+        <div style="display: flex; justify-content: center;">
+          <button class="btn btn-primary btn-rounded btn-fw" [disabled]="f.invalid" (click)="savePatient()" >Save</button>
+         </div>
+         
+        </form>
+      </div>
+    </div>
+  </div>
